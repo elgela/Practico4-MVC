@@ -1,6 +1,10 @@
 <?php
-// session_start();
-require_once './app/controllers/task_controler.php';
+session_start();
+require_once 'app/middlewares/guard.middleware.php';
+require_once 'app/middlewares/session.middleware.php';
+// require_once 'templates/tabla.phtml';
+// require_once 'templates/form_add.phtml';
+require_once 'app/controllers/task_controler.php';
 
 $action = 'home'; // acción por defecto
 if (!empty($_GET['action'])) {
@@ -25,9 +29,16 @@ switch ($params[0]) {
         $controler->showHome();
     break;
     // PRODUCTOS
-    // case 'productos':
-        
-    // break;
+    case 'detalle_producto':
+        if (isset($params[1])) {
+            $controler->showProductById($params[1]);
+        } else {
+            $controler->showHome();
+        }
+    break;
+    case 'aromatizador':
+
+    break;
     default:
         echo 'error!';
         break;

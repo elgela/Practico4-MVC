@@ -1,0 +1,21 @@
+.productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; /* espacio entre productos */
+    padding: 20px;
+}
+
+.detalles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+li a {
+    text-decoration: none;
+}

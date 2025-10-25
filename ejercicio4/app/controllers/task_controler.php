@@ -1,6 +1,6 @@
 <?php
-include_once 'models/task.model.php';
-include_once 'views/task.view.php';
+require_once 'app/models/task.model.php';
+require_once 'app/views/task.view.php';
 
 class TaskControler {
     private $model;
@@ -16,5 +16,9 @@ class TaskControler {
         $this->view->showProducts($productos);
     }
 
+    function showProductById($id) {
+        $productos = $this->model->getProducts();
+        $this->view->showDetails($productos, $id);
+    }
 
 }

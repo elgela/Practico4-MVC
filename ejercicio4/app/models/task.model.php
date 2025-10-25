@@ -1,23 +1,22 @@
 <?php
-class TaskModel {
-    private $db;
     function conection() {
-        $this->db = new PDO('mysql:host=localhost;dbname=productos_limpieza;charset=utf8', 'root', '');
+        return new PDO('mysql:host=localhost;dbname=productos_limpieza;charset=utf8', 'root', '');
     }
+class TaskModel {
 
     function getProducts() {
         // 1. abro conexion a la DB
         $db = conection();
 
         // 2. envio consulta y obtengo resultados
-        $query = $this->db->prepare('SELECT * FROM productos');
+        $query = $db->prepare('SELECT * FROM productos');
         $query->execute();
 
         // 3. obtengo los datos que arroja la query
         $productos = $query->fetchAll(PDO::FETCH_OBJ);
+
         return $productos;
     }
-    // $productos = getProducts();
 
 
     // inserta en la base de datos

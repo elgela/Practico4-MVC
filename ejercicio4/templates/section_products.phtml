@@ -1,0 +1,12 @@
+<section>
+    <h4><?php echo $producto->nombre ?></h4>
+    <?php if (empty($producto->imagen)) {
+        ?>
+        <a href="detalle_producto/<?php echo $producto->id ?>"><img src="https://static.vecteezy.com/system/resources/previews/022/059/000/non_2x/no-image-available-icon-vector.jpg" alt="sin imagen" style="max-width:200px;"></a>
+    <?php
+    } else {
+        ?>
+    <a href="detalle_producto/<?php echo $producto->id ?>"><img src="<?= htmlspecialchars($producto->imagen) ?>" alt="Imagen de <?php echo $producto->nombre ?>" style="max-width:200px;"></a>
+    <?php } ?>
+    
+</section>
