@@ -36,9 +36,6 @@ switch ($params[0]) {
             $controler->showHome();
         }
     break;
-    case 'aromatizador':
-
-    break;
     default:
         echo 'error!';
         break;
