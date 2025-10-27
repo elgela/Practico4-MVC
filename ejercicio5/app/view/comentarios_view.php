@@ -8,7 +8,7 @@ class ComentariosView {
             <?php foreach ($tabla_comentarios as $comentario) { ?>
                 <section>
                     <ul>
-                        <li><h4><?php echo $comentario->id . ' - ' .  $comentario->comentario ?></h4></li>
+                        <li><h4><?php echo $comentario->comentario ?></h4></li>
                     </ul>
                 </section>
                 <?php } ?>

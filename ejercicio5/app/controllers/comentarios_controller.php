@@ -20,7 +20,7 @@ class ComentariosController {
         if (isset($_POST['comentario']) && !empty($_POST['comentario'])) {
             $comentario = trim($_POST['comentario']);
             $this->model->insertComent($comentario);
-            header('Location : home');
+            header('Location: ' . BASE_URL);
         } else {
             $this->view->showError("Ingrese un comentario");
         }
